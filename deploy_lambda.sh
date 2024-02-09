@@ -17,6 +17,6 @@ zip deployment.zip bootstrap
 FUNCTION_NAME="your-function-name"
 AWS_REGION="us-west-2"
 
-aws lambda update-function-code --function-name $FUNCTION_NAME --region $AWS_REGION --zip-file fileb://deployment.zip
+aws lambda update-function-code --function-name $FUNCTION_NAME --region $AWS_REGION --zip-file fileb://deployment.zip > aws_output.log 2>&1
 
 echo "Deployment to AWS Lambda function $FUNCTION_NAME completed successfully."

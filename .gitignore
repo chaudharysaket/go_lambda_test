@@ -1,3 +1,4 @@
 deployment.zip
 lambda-handler.zip
 bootstrap
+aws_output.log
