@@ -5,6 +5,7 @@ go 1.21.4
 require (
 	github.com/newrelic/go-agent/v3 v3.29.1
 	github.com/newrelic/go-agent/v3/integrations/nrlambda v1.2.2
+	github.com/sirupsen/logrus v1.9.3
 )
 
 require (

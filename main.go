@@ -5,16 +5,16 @@ import (
 	"fmt"
 	"github.com/newrelic/go-agent/v3/integrations/nrlambda"
 	"github.com/newrelic/go-agent/v3/newrelic"
+	// log "github.com/sirupsen/logrus"
 )
 
 func handler(ctx context.Context) (string, error) {
 	// At this point, we're handling an invocation. Cold start is over; this code runs for each invocation.
 	// We'd like to add a custom event, and a custom attribute. For that, we need the transaction.
+	// log.Fatal("This is a critical error message, lambda will exit after this")
 	if txn := newrelic.FromContext(ctx); nil != txn {
 		// This is an example of a custom event. `FROM MyGoEvent SELECT *` in New Relic will find this event.
-		txn.Application().RecordCustomEvent("MyGoEvent", map[string]interface{}{
-			"zip": "zap",
-		})
+		txn.Application().RecordCustomMetric("someMetric", 24)
 
 		// This attribute gets added to the normal AwsLambdaInvocation event
 		txn.AddAttribute("customAttribute", "customAttributeValue")
