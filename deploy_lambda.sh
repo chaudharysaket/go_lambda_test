@@ -17,7 +17,7 @@ zip deployment.zip bootstrap
 FUNCTION_NAME="GO_CustomMetric_Saket_test"
 AWS_REGION="us-west-2"
 
-#Test Signature with GPG
+#Test Signature with GPG check 1
 
 # aws lambda create-function --function-name $FUNCTION_NAME \
 # --zip-file fileb://deployment.zip \
